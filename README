@@ -1,0 +1,60 @@
+NAME
+    MooseX::Types::LogAny - Moose Types for Log::Any
+
+VERSION
+    version 0.001000
+
+SYNOPSIS
+            use Moose;
+            use Class::Load 0.20 'load_class';
+            use MooseX::Types::LogAny qw( LogAny );
+
+            has log => (
+                    isa     => LogAny,
+                    is      => 'ro',
+                    lazy    => 1,
+                    default => sub { load_class('Log::Any')->get_logger },
+            );
+
+DESCRIPTION
+    The motivation behind this modules is that Log::Any::Adapter::Null does
+    not inherit from Log::Any::Adapter::Base which all of the other adapters
+    do. Moose will not allow a type union of undefined types unless they are
+    Moose classes. This module allows you to simply use the LogAny type
+    which has done the union for you.
+
+SUBROUTINES
+  LogAny
+    Type union of LogAnyNull and LogAnyBase
+
+  LogAnyNull
+    Class Log::Any::Adapter::Null
+
+  LogAnyBase
+    Class Log::Any::Adapter::Base
+
+SEE ALSO
+    MooseX::Types
+    Log::Any
+    Log::Any::Adapter
+
+ACKNOWLEDGMENTS
+    Development sponsored by HostGator.com <http://hostgator.com>
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    https://github.com/xenoterracide/moosex-types-logany/issues
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
+AUTHOR
+    Caleb Cushing <xenoterracide@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is Copyright (c) 2013 by Caleb Cushing.
+
+    This is free software, licensed under:
+
+      The Artistic License 2.0 (GPL Compatible)
+
