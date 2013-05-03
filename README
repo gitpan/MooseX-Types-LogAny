@@ -2,7 +2,7 @@ NAME
     MooseX::Types::LogAny - Moose Types for Log::Any
 
 VERSION
-    version 0.001000
+    version 0.001001
 
 SYNOPSIS
             use Moose;

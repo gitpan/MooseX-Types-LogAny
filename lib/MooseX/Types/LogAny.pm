@@ -1,9 +1,9 @@
 package MooseX::Types::LogAny;
-use 5.006;
+use 5.008;
 use strict;
 use warnings;
 
-our $VERSION = '0.001000'; # VERSION
+our $VERSION = '0.001001'; # VERSION
 
 use MooseX::Types -declare => [qw(
 	LogAny
@@ -29,7 +29,7 @@ MooseX::Types::LogAny - Moose Types for Log::Any
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 
